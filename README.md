@@ -1,43 +1,13 @@
-# Django Consultant
+# Loan Application Workflow
 
-## Descrição
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 
-Stack Tecnológico
+A Django project sketch for a loan application workflow. It outlines proposal records, review status, and integration points for an external eligibility service.
 
-Django
-Django Celery
-Django Rest Framework
-Requisitos
+## Scope
 
-Os usuários devem poder solicitar empréstimos.
-Os empréstimos devem ser analisados por uma API de terceiros.
-Os empréstimos aprovados devem ser disponibilizados para os usuários.
-Implementação
+- Capture loan proposals with configurable fields.
+- Track each proposal through a review status.
+- Connect an approval workflow to an external service.
 
-Os principais trechos de código para atender aos requisitos são os seguintes:
-
-Criação do Modelo de Proposta
-
-- Um modelo de proposta é criado para armazenar as informações de cada solicitação de empréstimo. O modelo inclui os seguintes campos:
-
-* campos: Campos flexíveis definidos pelo admin
-* status: Status da proposta
-* resultado_analise: Resultado da análise
-Interface de Preenchimento de Propostas
-Uma interface de preenchimento de propostas é criada para permitir que os usuários solicitem empréstimos. A interface inclui um formulário com os campos definidos no modelo de proposta.
-
-API para Criação de Propostas
-
-- Uma API é criada para permitir que os usuários solicitem empréstimos. A API recebe as informações do formulário de preenchimento de propostas e as salva no modelo de proposta.
-
-Configuração do Celery para Análise Assíncrona
-
-- O Celery é utilizado para realizar a análise dos empréstimos de forma assíncrona. A API chama uma tarefa do Celery para enviar a proposta para análise.
-
-Integração com a API de Análise de Crédito
-
-- A API de análise de crédito é utilizada para avaliar o risco de cada solicitação de empréstimo. A tarefa do Celery chama a API de análise de crédito com as informações da proposta.
-
-Django Admin para Gerenciamento
-
-- O Django Admin é utilizado para gerenciar as propostas de empréstimo. O admin inclui uma página para visualizar e editar as propostas.
+The repository contains Django model, admin, view, and task examples. It is a starting point rather than a packaged, ready-to-deploy service; configure the Django project and its dependencies before running it.
